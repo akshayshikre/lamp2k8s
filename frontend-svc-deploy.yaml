@@ -10,7 +10,6 @@ spec:
   - port: 80
     name: port80
     targetPort: web-port
-    nodePort: 32222
   selector:
     app: frontend-app
 ---
