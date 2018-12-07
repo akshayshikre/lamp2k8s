@@ -3,12 +3,13 @@ kind: Ingress
 metadata:
   name: frontend-svc-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"
+    ingress.kubernetes.io/ssl-redirect: "false"
 spec:
   rules:
   - http:
       paths:
-      - path: /site
+      - path: /
         backend:
           serviceName: frontend-svc
           servicePort: port80
