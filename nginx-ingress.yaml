@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - 157.230.9.247
+    - mydashboard.localhost
     secretName: kubernetes-dashboard-certs
   rules:
-  - host: 157.230.9.247
+  - host: mydashboard.localhost
     http:
       paths:
       - path: /dashboard
