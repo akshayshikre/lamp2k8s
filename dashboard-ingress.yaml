@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.org/ssl-backends: "kubernetes-dashboard"
+    kubernetes.io/ingress.allow-http: "true"
+  name: dashboard-ingress
+  namespace: kube-system
+spec:
+  tls:
+  - hosts:
+    - mydashboard.localhost
+    secretName: kubernetes-dashboard-certs
+  rules:
+  - host: mydashboard.localhost
+    http:
+      paths:
+      - path: /dashboard
+        backend:
+          serviceName: kubernetes-dashboard
+          servicePort: 443
