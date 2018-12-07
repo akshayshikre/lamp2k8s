@@ -12,4 +12,4 @@ spec:
       - path: /
         backend:
           serviceName: frontend-svc
-          servicePort: port80
+          servicePort: 80
